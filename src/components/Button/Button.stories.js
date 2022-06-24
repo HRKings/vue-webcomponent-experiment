@@ -1,4 +1,4 @@
-import MyButton from './Button.ce.vue';
+import MyButton from './Button.vue';
 
 // More on default export: https://storybook.js.org/docs/vue/writing-stories/introduction#default-export
 export default {

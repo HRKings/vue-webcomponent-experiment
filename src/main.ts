@@ -1,6 +1,8 @@
 import { defineCustomElement } from 'vue'
-import Button from './components/Button/Button.ce.vue'
 
-const ButtonElement = defineCustomElement(Button)
+const modules = import.meta.globEager('./components/**/*.vue')
 
-customElements.define('vue-button', ButtonElement)
+for(const individualImport in modules) {
+  const webComponent = defineCustomElement(modules[individualImport]);
+  customElements.define(modules[individualImport].name, webComponent);
+}
